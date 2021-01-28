@@ -1,0 +1,14 @@
+<header class="app-header" (window:resize)="onResize($event)">
+    <div class="header-content">
+        <a class="logo-link">andrés valencia</a>
+        <button aria-label="Open navigation" class="open-nav" (click)="toggleNav()">&#9776;</button>
+        <nav class="app-navbar" [ngClass]="{open: isOpen}">
+            <button aria-label="Close navigation" class="close-nav" (click)="toggleNav()">&times;</button>
+            <ul class="nav-list">
+                <li class="nav-item"><a [routerLink]="['/home']" routerLinkActive="active" class="nav-link">home</a></li>
+                <li class="nav-item"><a [routerLink]="['/about']" routerLinkActive="active" class="nav-link">about me</a></li>
+                <li class="nav-item"><a [routerLink]="['/contact']" routerLinkActive="active" class="nav-link">contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>

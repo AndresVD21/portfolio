@@ -1,0 +1,143 @@
+@import "../../../../assets/scss/abstracts/variables";
+.app-header {
+    background-color: $dark-blue;
+    .header-content {
+        display: flex;
+
+        .open-nav {
+            border: 0;
+            background: 0;
+            color: $light-blue;
+            cursor: pointer;
+            padding: 0.5em;
+            margin-left: auto;
+            font-size: 1.5em;
+        }
+
+        .logo-link {
+            text-transform: uppercase;
+            font-size: 2rem;
+            font-weight: 900;
+            padding: 1em;
+        }
+
+        .app-navbar {
+            position: fixed;
+            background-color: $dark-blue;
+            width: 100%;
+            top: 0;
+            right: 0;
+            left: 100%;
+            bottom: 0;
+            transform: translateX(0);
+            transition: transform 250ms;
+
+            &.open {
+                transform: translateX(-100%);
+            }
+
+            .close-nav {
+                border: 0;
+                background: 0;
+                color: $light-blue;
+                font-weight: 700;
+                font-size: 3rem;
+                cursor: pointer;
+                padding: 0.5em;
+                position: absolute;
+            }
+
+            .nav-list {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+
+                .nav-item {
+                    .nav-link {
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        font-weight: 700;
+                        letter-spacing: .5px;
+                        font-size: 3rem;
+                        cursor: pointer;
+
+                        &:hover,
+                        &:focus {
+                            color: $secondary-blue;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 600px) {
+    .open-nav,
+    .close-nav {
+        display: none;
+    }
+
+    .app-header .header-content {
+        .app-navbar {
+            position: initial;
+            padding: 1em 2em;
+
+            .nav-list {
+                flex-direction: row;
+                justify-content: flex-start;
+
+                .nav-item {
+                    margin-left: 1em;
+
+                    
+                    .nav-link {
+                        font-size: 1.5rem;
+                        position: relative;
+                        color: $light-blue;
+
+                        &.active {
+                            &::after {
+                                content: "";
+                                display: block;
+                                height: 2px;
+                                width: 100%;
+                                position: absolute;
+                                background: $light-blue;
+                                left: 0;
+                                margin-top: 5px;
+                            }
+                        }
+
+                        &:hover,
+                        &:focus {
+                            color: $light-blue;
+                        }
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            height: 2px;
+                            left: 50%;
+                            background: $light-blue;
+                            transition: width 0.3s ease 0s, left 0.3s ease 0s;
+                            width: 0;
+                            position: absolute;
+                            margin-top: 5px;
+                        }
+    
+                        &:hover::after {
+                            width: 100%;
+                            left: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
