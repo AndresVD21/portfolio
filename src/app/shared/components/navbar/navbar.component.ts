@@ -20,7 +20,7 @@ export class NavbarComponent implements OnInit {
 
   onResize(event) {
     let width = event.target.innerWidth;
-    if (width >= 600) {
+    if (width >= 750) {
       if (this.isOpen) {
         this.isOpen = false;
       }
