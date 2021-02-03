@@ -1,0 +1,58 @@
+@import "../../../../assets/scss/abstracts/variables";
+
+.home-container {
+    padding: 2em;
+
+    .introduction-container {
+        margin-bottom: 2em;
+
+        .introduction-section {
+            padding: 1em;
+
+            .home-title {
+                text-transform: uppercase;
+                font-size: 2rem;
+                font-weight: 900;
+                margin-bottom: 0.5em;
+                letter-spacing: 2px;
+            }
+        }
+    
+        .technologies-section {
+            padding: 1em;
+            border: 4px solid;
+
+            .technologies-title {
+                width: fit-content;
+            }
+            .technologies-container {
+                .technology-item {
+                    & + .technology-item {
+                        margin-left: 0.2em;
+                    }
+                }
+            }
+        }
+    }
+
+    .material-section {
+        padding: 1em;
+    }
+
+}
+
+.subtitle {
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    width: fit-content;
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 15px;
+        background: $light-blue;
+        margin-top: -14px;
+        margin-left: 10px;
+    }
+}
