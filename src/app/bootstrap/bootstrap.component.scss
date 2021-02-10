@@ -1,0 +1,9 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+.bootstrap-container {
+    .row {
+        &+.row {
+            margin-top: 0.5em;
+        }
+    }
+}

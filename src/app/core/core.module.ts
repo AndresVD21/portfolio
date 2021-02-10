@@ -7,6 +7,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { CoreComponent } from './core.component';
 import { MaterialModule } from '../material/material.module';
 import { SharedModule } from '../shared/shared.module';
+import { BootstrapModule } from '../bootstrap/bootstrap.module';
 
 
 
@@ -16,6 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     CoreRoutingModule,
     MaterialModule,
+    BootstrapModule,
     SharedModule
   ]
 })
